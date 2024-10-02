@@ -1,3 +1,0 @@
-Hola git, 
-
-Este es mi primer uso de git en mi propio PC. Qu'efeliz estoy

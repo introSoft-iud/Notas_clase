@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Uso de GitHub Issues para Gestión de Tareas y Seguimiento de Problemas}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+GitHub \textbf{Issues} es una herramienta poderosa para gestionar tareas, reportar bugs, sugerir nuevas características o mejoras, y realizar un seguimiento del progreso dentro de un proyecto de software. Te permite colaborar y organizar el trabajo de manera eficiente dentro de un repositorio.
+
+\section{1. Acceder a GitHub Issues}
+Para utilizar GitHub Issues en un proyecto, sigue estos pasos:
+\begin{itemize}
+    \item Abre el repositorio en GitHub donde quieres reportar o gestionar issues.
+    \item Haz clic en la pestaña \textbf{"Issues"} en la parte superior de la página.
+\end{itemize}
+
+Si el repositorio no tiene la pestaña \textbf{Issues} activada, los propietarios pueden habilitarlo en \textbf{Settings $\rightarrow$ Features $\rightarrow$ Issues}.
+
+\section{2. Crear un Issue Nuevo}
+\begin{enumerate}
+    \item En la pestaña \textbf{Issues}, haz clic en el botón \textbf{"New Issue"}.
+    \item Ingresa un título descriptivo. Este debería resumir el problema o tarea.
+    \item En la caja de descripción, escribe los detalles del issue:
+    \begin{itemize}
+        \item Descripción clara del problema.
+        \item Pasos para reproducir un bug (si aplica).
+        \item Soluciones propuestas o ideas para mejora.
+        \item Capturas de pantalla o links relevantes, si son útiles.
+    \end{itemize}
+    \item (Opcional) Agrega etiquetas (\textbf{Labels}) para categorizar el issue, como:
+    \begin{itemize}
+        \item \textbf{bug}: Si es un error o problema.
+        \item \textbf{enhancement}: Para nuevas características o mejoras.
+        \item \textbf{documentation}: Para cambios en la documentación.
+    \end{itemize}
+    \item (Opcional) Asigna el issue a un colaborador específico o a ti mismo si eres quien va a trabajar en la tarea.
+    \item Haz clic en \textbf{"Submit new issue"} para crear el issue.
+\end{enumerate}
+
+\section{3. Seguir el Progreso de un Issue}
+\subsection{a. Comentarios}
+Cualquiera que tenga acceso al repositorio puede dejar comentarios en un issue. Esto permite:
+\begin{itemize}
+    \item \textbf{Discutir} posibles soluciones o pasos adicionales.
+    \item \textbf{Resolver dudas} y compartir ideas.
+\end{itemize}
+En cada comentario se puede mencionar a un colaborador usando \texttt{@username} para notificar a esa persona y pedir su intervención.
+
+\subsection{b. Cerrar un Issue}
+Cuando un issue se resuelve (ya sea que se haya corregido un bug o completado una tarea), el creador o cualquier colaborador con permisos puede cerrarlo:
+\begin{itemize}
+    \item Haz clic en el botón \textbf{"Close issue"} en la parte inferior del issue.
+\end{itemize}
+Los \textbf{commits} que mencionen el número del issue en su mensaje de commit, como en \texttt{Fixes \#123}, pueden cerrar automáticamente el issue relacionado cuando el commit se fusione en la rama principal.
+
+\subsection{c. Referenciar Commits y Pull Requests}
+Puedes vincular un issue a un commit o pull request para rastrear cómo el código resuelve el problema. En el mensaje del commit o PR, puedes usar \texttt{\#} seguido del número del issue, por ejemplo:
+\begin{verbatim}
+git commit -m "Soluciona el bug en la función de login. Fixes #45"
+\end{verbatim}
+Esto vinculará el commit o PR con el issue mencionado.
+
+\section{4. Uso Avanzado de Issues}
+\subsection{a. Milestones (Hitos)}
+Puedes agrupar issues bajo \textbf{milestones} o hitos, que son metas más grandes del proyecto. Esto permite dividir el trabajo en etapas o lanzamientos.
+\begin{itemize}
+    \item En la pestaña de \textbf{Milestones}, crea un nuevo milestone.
+    \item Asigna un conjunto de issues al milestone para hacer un seguimiento de qué tareas deben completarse para cumplir un objetivo.
+\end{itemize}
+
+\subsection{b. Projects (Tableros de Proyecto)}
+GitHub permite organizar issues en tableros estilo Kanban a través de \textbf{Projects}. Los proyectos permiten visualizar el estado de las tareas mediante tarjetas que se mueven por columnas (como "To Do", "In Progress", "Done").
+\begin{itemize}
+    \item Crea un nuevo proyecto en la pestaña \textbf{Projects}.
+    \item Agrega issues como tarjetas al proyecto y organízalos en columnas.
+    \item A medida que trabajas en un issue, mueve la tarjeta de columna en columna para indicar su progreso.
+\end{itemize}
+
+\subsection{c. Etiquetas Personalizadas (Custom Labels)}
+Además de las etiquetas predefinidas, puedes crear etiquetas personalizadas para gestionar el flujo de trabajo. Por ejemplo:
+\begin{itemize}
+    \item \textbf{critical}: Para problemas que requieren atención inmediata.
+    \item \textbf{wontfix}: Si decides que un problema no será abordado.
+\end{itemize}
+
+\section{5. Mejores Prácticas para Usar Issues}
+\begin{itemize}
+    \item \textbf{Usa títulos descriptivos}: Un título claro hace que los issues sean fáciles de identificar y priorizar.
+    \item \textbf{Divide las tareas}: Si una tarea es grande, divídela en varios issues pequeños.
+    \item \textbf{Usa etiquetas consistentemente}: Mantén un sistema de etiquetas claro para facilitar el filtro y la priorización.
+    \item \textbf{Cierra issues innecesarios}: Si un issue ya no es relevante, ciérralo para mantener el flujo de trabajo limpio.
+\end{itemize}
+
+\section{Conclusión}
+Los \textbf{GitHub Issues} son una herramienta útil para gestionar tareas y hacer seguimiento a problemas dentro de un proyecto. Puedes crear issues, asignar colaboradores, agregar etiquetas, y referenciar issues desde commits o pull requests. \textbf{Milestones} y \textbf{Projects} permiten organizar el trabajo de forma más estructurada.
+
+\end{document}
+
