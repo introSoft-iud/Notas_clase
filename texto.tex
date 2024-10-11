@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Flujo de Trabajo Git Fork}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+El flujo de trabajo \textbf{Git Fork} es una estrategia comúnmente utilizada cuando varios desarrolladores colaboran en un proyecto de código abierto o en cualquier repositorio al que no tienen acceso directo para hacer cambios. A continuación se explica cómo funciona:
+
+\section{1. Clonar un repositorio mediante un "fork"}
+
+El flujo de trabajo comienza con la creación de un \textbf{fork}. Un \textit{fork} es una copia completa del repositorio que te permite trabajar de forma independiente en tu propia cuenta de GitHub (u otra plataforma Git). Este paso es esencial cuando no tienes permisos para hacer \textit{push} directamente al repositorio principal (generalmente llamado el \textbf{repositorio upstream}).
+
+\noindent
+\textbf{Ejemplo}: Si encuentras un proyecto interesante en GitHub pero no tienes permisos para modificarlo, puedes hacer un \textit{fork}. Esto crea una copia del repositorio en tu cuenta.
+
+\section{2. Clonar tu repositorio fork a tu máquina local}
+
+Una vez que has hecho un \textit{fork} del proyecto en tu cuenta, clonas tu copia del repositorio a tu máquina local para empezar a trabajar en los cambios.
+
+\begin{verbatim}
+git clone https://github.com/tu-usuario/tu-fork-del-proyecto.git
+cd tu-fork-del-proyecto
+\end{verbatim}
+
+\section{3. Crear una rama para los cambios}
+
+Antes de comenzar a modificar el código, es una buena práctica crear una nueva rama para trabajar en los cambios. Esto ayuda a mantener el repositorio organizado y a evitar modificar directamente la rama principal (\textit{main} o \textit{master}).
+
+\begin{verbatim}
+git checkout -b mi-nueva-rama
+\end{verbatim}
+
+\section{4. Hacer cambios y commits}
+
+Realizas los cambios necesarios en tu copia local del repositorio. Después de realizar los cambios, puedes agregar y hacer \textit{commits}.
+
+\begin{verbatim}
+git add .
+git commit -m "Descripción de los cambios"
+\end{verbatim}
+
+\section{5. Subir los cambios a tu fork en GitHub}
+
+Los cambios se suben a tu repositorio \textit{fork} en GitHub o GitLab (o la plataforma de Git que estés utilizando).
+
+\begin{verbatim}
+git push origin mi-nueva-rama
+\end{verbatim}
+
+\section{6. Crear un "Pull Request" (PR)}
+
+Una vez que los cambios están en tu repositorio \textit{fork} en GitHub, puedes solicitar que se integren al repositorio original (\textit{upstream}). Esto se hace mediante un \textbf{Pull Request} (PR). En el PR, los mantenedores del proyecto pueden revisar tus cambios y decidir si los aceptan o no.
+
+\noindent
+\textbf{Pull Request}: Es una solicitud para que los mantenedores del repositorio original revisen y fusionen los cambios propuestos desde tu \textit{fork}.
+
+\noindent
+\textbf{Ejemplo}: Si has corregido un error o añadido una nueva funcionalidad al proyecto original, puedes enviar un \textit{PR} para que esos cambios sean revisados y potencialmente aceptados en el código base.
+
+\section{7. Sincronizar tu fork con el repositorio original (upstream)}
+
+A medida que el repositorio original sigue evolucionando, debes mantener tu \textit{fork} actualizado. Para ello, primero necesitas agregar el repositorio original como un \textbf{remoto} (usualmente llamado \textit{upstream}).
+
+\begin{verbatim}
+git remote add upstream https://github.com/usuario-del-proyecto-original/proyecto-original.git
+\end{verbatim}
+
+Luego, puedes obtener los cambios del repositorio original y fusionarlos con tu copia local:
+
+\begin{verbatim}
+git fetch upstream
+git merge upstream/main  # o 'master', según la rama que uses
+\end{verbatim}
+
+\section{Resumen del flujo de trabajo Git Fork}
+
+\begin{itemize}
+    \item \textbf{Fork} del repositorio original.
+    \item Clonar tu \textit{fork} a tu máquina local.
+    \item Crear una nueva rama para trabajar en los cambios.
+    \item Realizar cambios, hacer \textit{commits} y subirlos a tu \textit{fork}.
+    \item Crear un \textbf{Pull Request} para solicitar la integración de tus cambios al proyecto original.
+    \item Sincronizar tu \textit{fork} con el repositorio original para mantenerlo actualizado.
+\end{itemize}
+
+Este flujo de trabajo es común en proyectos colaborativos, ya que permite que los desarrolladores trabajen en mejoras sin interferir directamente con el repositorio principal, manteniendo una forma clara y organizada de proponer cambios.
+
+\end{document}
+
